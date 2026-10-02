@@ -1,169 +1,277 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แฟ้มสะสมผลงาน (Portfolio) - รวมชิ้นงานส่งอาจารย์</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>PORTFOLIO | WEB DESIGN SHOWCASE</title>
     <style>
+        /* Global Styles & Variables */
+        :root {
+            --bg-color: #0d0f12;
+            --accent-pink: #ff2a85;
+            --accent-yellow: #fbee00;
+            --accent-cyan: #00f0ff;
+            --card-bg: #161b22;
+            --text-color: #ffffff;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Sarabun', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
         }
-        header {
-            background: linear-gradient(135deg, #2b5876, #4e4376);
-            color: white;
-            text-align: center;
-            padding: 3.5rem 1rem;
-        }
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 2.5rem auto;
-            padding: 0 1.5rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-        .card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        /* --- LANDING SECTION (หน้าแรก) --- */
+        #hero-page {
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            border: 1px solid #eee;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: radial-gradient(circle at center, #1f2937 0%, var(--bg-color) 70%);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
         }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+
+        /* ชื่อภาษาอังกฤษ ดีไซน์กราฟิกโดดเด่น */
+        .my-name {
+            font-size: 5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--accent-cyan);
+            text-shadow: 4px 4px 0px var(--accent-pink);
+            transition: all 0.3s ease;
+            user-select: none;
         }
+
+        .my-name:hover {
+            color: var(--accent-yellow);
+            -webkit-text-stroke: 0px;
+            text-shadow: 8px 8px 0px var(--accent-pink), -8px -8px 0px var(--accent-cyan);
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .click-hint {
+            margin-top: 25px;
+            font-size: 1.2rem;
+            color: #8b949e;
+            background: #21262d;
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid var(--accent-pink);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 42, 133, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 42, 133, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 42, 133, 0); }
+        }
+
+        /* --- PORTFOLIO SECTION (หน้ารวบรวมเว็บ) --- */
+        #portfolio-page {
+            display: none;
+            min-height: 100vh;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .header-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--accent-yellow);
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--accent-pink);
+            display: inline-block;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* สไตล์ Card เน้นกราฟิก Neo-Brutalism */
+        .web-card {
+            background: var(--card-bg);
+            border: 3px solid #30363d;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .web-card:hover {
+            transform: translateY(-10px) rotate(1deg);
+            border-color: var(--accent-cyan);
+            box-shadow: 8px 8px 0px var(--accent-pink);
+        }
+
+        .card-graphic {
+            height: 180px;
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-cyan));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #000;
+        }
+
         .card-body {
-            padding: 1.5rem;
+            padding: 20px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-        .tag {
-            display: inline-block;
-            background: #e8f4fd;
-            color: #1e88e5;
-            font-size: 0.85rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            width: fit-content;
-        }
+
         .card-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--accent-cyan);
         }
+
         .card-desc {
             font-size: 0.95rem;
-            color: #666;
-            margin-bottom: 1.5rem;
+            color: #c9d1d9;
+            line-height: 1.5;
+            margin-bottom: 20px;
             flex-grow: 1;
         }
-        .btn {
-            display: block;
+
+        .card-btn {
+            display: inline-block;
             text-align: center;
-            background: #1e88e5;
-            color: white;
+            padding: 12px 20px;
+            background: var(--accent-yellow);
+            color: #000;
+            font-weight: bold;
             text-decoration: none;
-            padding: 0.65rem 1.2rem;
             border-radius: 8px;
-            font-weight: 600;
             transition: background 0.2s;
         }
-        .btn:hover {
-            background: #1565c0;
+
+        .card-btn:hover {
+            background: #fff;
         }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #777;
-            font-size: 0.9rem;
-            border-top: 1px solid #eee;
-            margin-top: 3rem;
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: var(--accent-pink);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            display: none;
+            z-index: 100;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>แฟ้มรวบรวมชิ้นงาน (Work Portfolio)</h1>
-        <p>รวบรวมผลงานการพัฒนาเว็บไซต์และโครงการนำเสนออาจารย์</p>
-    </header>
+    <!-- ปุ่มย้อนกลับ -->
+    <button class="back-btn" id="backBtn" onclick="showLanding()">← BACK TO HOME</button>
 
-    <div class="container">
-        <div class="grid">
-            
-            <!-- ชิ้นงานที่ 1 -->
-            <div class="card">
+    <!-- LANDING PAGE -->
+    <section id="hero-page" onclick="showPortfolio()">
+        <h1 class="my-name">FIRSTNAME LASTNAME</h1>
+        <div class="click-hint">⚡ CLICK ANYWHERE TO EXPLORE WEBSITES ⚡</div>
+    </section>
+
+    <!-- PORTFOLIO SHOWCASE PAGE -->
+    <section id="portfolio-page">
+        <div style="text-align: center;">
+            <h2 class="header-title">DEVELOPED WEBSITES</h2>
+        </div>
+
+        <div class="grid-container">
+
+            <!-- Website Card 1 -->
+            <div class="web-card">
+                <div class="card-graphic" style="background: linear-gradient(135deg, #ff007f, #7928ca);">WEB 01</div>
                 <div class="card-body">
-                    <span class="tag">Google Sites</span>
-                    <h2 class="card-title">ชิ้นงานที่ 1: เว็บไซต์ Google Sites (โครงการที่ 1)</h2>
-                    <p class="card-desc">การพัฒนาเว็บไซต์ด้วย Google Sites เน้นการจัดวางโครงสร้างข้อมูลและสร้างเนื้อหาที่เข้าถึงง่าย</p>
-                    <a href="https://sites.google.com/d/1aICFL-wxhMJIVuKKQ1EtNros3hcl8Q1D/p/1NA0yaXnnV4X1jiQmAImPtFIreLilxblB/edit" target="_blank" class="btn">เปิดดูชิ้นงาน ↗</a>
+                    <h3 class="card-title">Interactive E-Commerce</h3>
+                    <p class="card-desc">เว็บไซต์ร้านค้าออนไลน์ที่เน้นงานวิชวล 3D Interactive มีระบบตระกร้าสินค้าและการชำระเงินที่ทันสมัย</p>
+                    <a href="https://your-website-1.com" target="_blank" class="card-btn">เข้าชม & ประเมินเว็บไซต์ 🚀</a>
                 </div>
             </div>
 
-            <!-- ชิ้นงานที่ 2 -->
-            <div class="card">
+            <!-- Website Card 2 -->
+            <div class="web-card">
+                <div class="card-graphic" style="background: linear-gradient(135deg, #00f2fe, #4facfe);">WEB 02</div>
                 <div class="card-body">
-                    <span class="tag">Google Sites</span>
-                    <h2 class="card-title">ชิ้นงานที่ 2: เว็บไซต์ Google Sites (โครงการที่ 2)</h2>
-                    <p class="card-desc">การออกแบบและตกแต่งเว็บไซต์เพิ่มเติม ตกแต่งเลย์เอาต์และการนำเสนอสื่อประสมผ่าน Google Sites</p>
-                    <a href="https://sites.google.com/d/1jsMjkUhDrIQz7KYHzdJ2mlxKu7oFiX8U/p/1w1ijfQ2nC0d2-EyktkEOtNhzF6OMJHhZ/edit" target="_blank" class="btn">เปิดดูชิ้นงาน ↗</a>
+                    <h3 class="card-title">Cyber Dashboard</h3>
+                    <p class="card-desc">เว็บแอปพลิเคชันสำหรับแสดงผลข้อมูลแบบ Real-time ด้วยธีม Cyberpunk พร้อมกราฟิกวิเคราะห์ข้อมูลขั้นสูง</p>
+                    <a href="https://your-website-2.com" target="_blank" class="card-btn">เข้าชม & ประเมินเว็บไซต์ 🚀</a>
                 </div>
             </div>
 
-            <!-- ชิ้นงานที่ 3 -->
-            <div class="card">
+            <!-- Website Card 3 -->
+            <div class="web-card">
+                <div class="card-graphic" style="background: linear-gradient(135deg, #f80032, #f76707);">WEB 03</div>
                 <div class="card-body">
-                    <span class="tag">HTML / CSS</span>
-                    <h2 class="card-title">ชิ้นงานที่ 3: โปรเจกต์จัดสไตล์ด้วย CSS (CSS22)</h2>
-                    <p class="card-desc">การเขียนโค้ดควบคุมรูปแบบเว็บไซต์ การจัดวาง Layout และสไตล์องค์ประกอบด้วยภาษา CSS</p>
-                    <a href="https://sontaya22.github.io/CSS22/" target="_blank" class="btn">เปิดดูชิ้นงาน ↗</a>
-                </div>
-            </div>
-
-            <!-- ชิ้นงานที่ 4 -->
-            <div class="card">
-                <div class="card-body">
-                    <span class="tag">Web Project</span>
-                    <h2 class="card-title">ชิ้นงานที่ 4: เว็บไซต์รวบรวมสูตรอาหาร (Cook11)</h2>
-                    <p class="card-desc">เว็บไซต์นำเสนอข้อมูลการทำอาหาร โครงสร้างเมนู และรูปภาพประกอบ โฮสติ้งบน GitHub Pages</p>
-                    <a href="https://sontaya22.github.io/cook11/" target="_blank" class="btn">เปิดดูชิ้นงาน ↗</a>
+                    <h3 class="card-title">Creative Portfolio</h3>
+                    <p class="card-desc">เว็บไซต์นำเสนอผลงานมัลติมีเดีย เน้นการเล่นกับแสง เงา และ Animation ในการเล่าเรื่อง (Storytelling)</p>
+                    <a href="https://your-website-3.com" target="_blank" class="card-btn">เข้าชม & ประเมินเว็บไซต์ 🚀</a>
                 </div>
             </div>
 
         </div>
-    </div>
+    </section>
 
-    <footer>
-        <p>จัดทำโดย: [ใส่ชื่อ-นามสกุล ของคุณ] | รหัสนักศึกษา/เลขที่: [ใส่รหัสของคุณ]</p>
-        <p>เสนอ: อาจารย์ [ใส่ชื่ออาจารย์]</p>
-    </footer>
+    <script>
+        function showPortfolio() {
+            const hero = document.getElementById('hero-page');
+            const portfolio = document.getElementById('portfolio-page');
+            const backBtn = document.getElementById('backBtn');
 
+            hero.style.opacity = '0';
+            setTimeout(() => {
+                hero.style.display = 'none';
+                portfolio.style.display = 'block';
+                backBtn.style.display = 'block';
+                setTimeout(() => {
+                    portfolio.style.opacity = '1';
+                }, 50);
+            }, 500);
+        }
+
+        function showLanding() {
+            const hero = document.getElementById('hero-page');
+            const portfolio = document.getElementById('portfolio-page');
+            const backBtn = document.getElementById('backBtn');
+
+            portfolio.style.opacity = '0';
+            setTimeout(() => {
+                portfolio.style.display = 'none';
+                backBtn.style.display = 'none';
+                hero.style.display = 'flex';
+                setTimeout(() => {
+                    hero.style.opacity = '1';
+                }, 50);
+            }, 500);
+        }
+    </script>
 </body>
 </html>
