@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แฟ้มสะสมผลงาน (Portfolio) - รวมชิ้นงานส่งอาจารย์</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Sarabun', sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            color: white;
+            text-align: center;
+            padding: 3.5rem 1rem;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .tag {
+            display: inline-block;
+            background: #e8f4fd;
+            color: #1e88e5;
+            font-size: 0.85rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            width: fit-content;
+        }
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        .card-desc {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: #1e88e5;
+            color: white;
+            text-decoration: none;
+            padding: 0.65rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #1565c0;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>แฟ้มรวบรวมชิ้นงาน (Work Portfolio)</h1>
+        <p>รวบรวมผลงานการพัฒนาเว็บไซต์และโครงการนำเสนออาจารย์</p>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            
+            <!-- ชิ้นงานที่ 1 -->
+            <div class="card">
+                <div class="card-body">
+                    <span class="tag">Google Sites</span>
+                    <h2 class="card-title">ชิ้นงานที่ 1: เว็บไซต์ Google Sites (โครงการที่ 1)</h2>
+                    <p class="card-desc">การพัฒนาเว็บไซต์ด้วย Google Sites เน้นการจัดวางโครงสร้างข้อมูลและสร้างเนื้อหาที่เข้าถึงง่าย</p>
+                    <a href="https://sites.google.com/d/1aICFL-wxhMJIVuKKQ1EtNros3hcl8Q1D/p/1NA0yaXnnV4X1jiQmAImPtFIreLilxblB/edit" target="_blank" class="btn">เปิดดูชิ้นงาน ↗</a>
+                </div>
+            </div>
+
+            <!-- ชิ้นงานที่ 2 -->
+            <div class="card">
+                <div class="card-body">
+                    <span class="tag">Google Sites</span>
+                    <h2 class="card-title">ชิ้นงานที่ 2: เว็บไซต์ Google Sites (โครงการที่ 2)</h2>
+                    <p class="card-desc">การออกแบบและตกแต่งเว็บไซต์เพิ่มเติม ตกแต่งเลย์เอาต์และการนำเสนอสื่อประสมผ่าน Google Sites</p>
+                    <a href="https://sites.google.com/d/1jsMjkUhDrIQz7KYHzdJ2mlxKu7oFiX8U/p/1w1ijfQ2nC0d2-EyktkEOtNhzF6OMJHhZ/edit" target="_blank" class="btn">เปิดดูชิ้นงาน ↗</a>
+                </div>
+            </div>
+
+            <!-- ชิ้นงานที่ 3 -->
+            <div class="card">
+                <div class="card-body">
+                    <span class="tag">HTML / CSS</span>
+                    <h2 class="card-title">ชิ้นงานที่ 3: โปรเจกต์จัดสไตล์ด้วย CSS (CSS22)</h2>
+                    <p class="card-desc">การเขียนโค้ดควบคุมรูปแบบเว็บไซต์ การจัดวาง Layout และสไตล์องค์ประกอบด้วยภาษา CSS</p>
+                    <a href="https://sontaya22.github.io/CSS22/" target="_blank" class="btn">เปิดดูชิ้นงาน ↗</a>
+                </div>
+            </div>
+
+            <!-- ชิ้นงานที่ 4 -->
+            <div class="card">
+                <div class="card-body">
+                    <span class="tag">Web Project</span>
+                    <h2 class="card-title">ชิ้นงานที่ 4: เว็บไซต์รวบรวมสูตรอาหาร (Cook11)</h2>
+                    <p class="card-desc">เว็บไซต์นำเสนอข้อมูลการทำอาหาร โครงสร้างเมนู และรูปภาพประกอบ โฮสติ้งบน GitHub Pages</p>
+                    <a href="https://sontaya22.github.io/cook11/" target="_blank" class="btn">เปิดดูชิ้นงาน ↗</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>จัดทำโดย: [ใส่ชื่อ-นามสกุล ของคุณ] | รหัสนักศึกษา/เลขที่: [ใส่รหัสของคุณ]</p>
+        <p>เสนอ: อาจารย์ [ใส่ชื่ออาจารย์]</p>
+    </footer>
+
+</body>
+</html>
